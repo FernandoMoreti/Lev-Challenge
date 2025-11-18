@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import dotenv from 'dotenv';
 import path from 'path';
-import fs from 'fs';
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 test("Automatizando a extração de dados do IBGE > 60 anos", async ({ page }) => {
 
@@ -14,8 +15,8 @@ test("Automatizando a extração de dados do IBGE > 60 anos", async ({ page }) =
     await page.waitForSelector('input[placeholder="E-mail"]');
 
     //Coloca senha e email
-    await page.fill('input[placeholder="E-mail"]', 'fernandombolela@gmail.com')
-    await page.fill('input[placeholder="Senha"]', 'Fer2908@')
+    await page.fill('input[placeholder="E-mail"]', process.env.USER_EMAIL)
+    await page.fill('input[placeholder="Senha"]', process.env.PASSWORD)
 
     // Clica no logar
     await page.click('text=Entrar');
