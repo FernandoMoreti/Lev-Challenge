@@ -1,0 +1,39 @@
+Navegação
+await page.goto('https://site.com');
+
+Preencher inputs
+await page.fill('#email', 'teste@email.com');
+
+Clicar em botões
+await page.click('text=Entrar');
+
+Selecionar opções
+await page.selectOption('#estado', 'SP');
+
+Esperar elementos
+await page.waitForSelector('.card');
+
+Validar algo
+await expect(page.locator('h1')).toHaveText('Bem-vindo');
+
+SELETORES:
+
+Seletores CSS (os mais usados)
+
+Você usa para selecionar elementos através de:
+
+Classe
+    .botao-login     // <button class="botao-login">
+
+ID
+    #email           // <input id="email">
+
+Atributo
+    input[name="email"]
+    input[placeholder="E-mail"]
+
+Tag + atributo
+    button[type="submit"]
+
+Classes combinadas
+    button.btn.btn-primary
