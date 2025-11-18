@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import path from 'path';
+import fs from 'fs';
 
 test("Demonstração de navegação e preenchimento de input", async ({ page }) => {
 
@@ -35,6 +37,23 @@ test("Demonstração de navegação e preenchimento de input", async ({ page }) 
 
     await page.click('.lv-block .lv-data .item-lista[data-indice="12"] .sidra-check .sidra-toggle');
     await page.click('.lv-block .lv-data .item-lista[data-indice="13"] .sidra-check .sidra-toggle');
+    
+    await page.click('#wrapper-arvore #arvore-niveis #arvore-355e-1 .item-arvore .nome-arvore .sidra-check .sidra-toggle');
+    await page.click('#wrapper-arvore #arvore-niveis #arvore-435e-1 .item-arvore .nome-arvore .sidra-check .sidra-toggle');
+
+    await page.click('#botao-downloads');
+
+    await page.waitForSelector('#modal-downloads')
+
+    await page.fill('#download-form .tabela-opcoes input[placeholder="tabela1209"]', 'populacao_60mais_1209')
+    
+    await page.selectOption('#download-form .tabela-opcoes .select-formato-arquivo', { value: 'br.csv' });
+
+    await page.click('.div-download-button #opcao-downloads')
+
+    const donwload = await page.waitForEvent('download');
+
+    await donwload.saveAs('dados/populacao_60mais_1209.csv');
 
     // Tira um print pra eu saber como esta
     await page.screenshot({ path: 'print.png' });
