@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "viewTest": "npx playwright test --headed"
+    "test": "npx playwright test --grep \"com login\"",
+    "viewTest": "npx playwright test --grep \"com login\" --headed",
+    "testWithoutLogin": "npx playwright test --grep \"sem login\"",
+    "viewTestWithoutLogin": "npx playwright test --grep \"sem login\" --headed"
   },
   "keywords": [],
   "author": "",
