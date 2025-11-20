@@ -73,18 +73,18 @@ A automação se divide em 12 passos principais:
 
 A) Execução com Login
 
-1 - Acessa o site do SIDRA
-2 - Realiza login utilizando o módulo dotenv
-3 - Aguarda overlay e o remove
-4 - Acessa barra de pesquisa
-5 - Procura pela tabela 1209
-6 - Aguarda editor carregar
-7 - Desmarca todos os filtros
-8 - Marca filtros de “60 anos ou mais”
-9 - Altera nível Brasil → Estados
-10 - Abre modal de downloads
-11 - Define nome + formato CSV
-12 - Salva o download na pasta /downloads/dados/
+1 - Acessa o site do SIDRA \n
+2 - Realiza login utilizando o módulo dotenv\n
+3 - Aguarda overlay e o remove\n
+4 - Acessa barra de pesquisa\n
+5 - Procura pela tabela 1209\n
+6 - Aguarda editor carregar\n
+7 - Desmarca todos os filtros\n
+8 - Marca filtros de “60 anos ou mais”\n
+9 - Altera nível Brasil → Estados\n
+10 - Abre modal de downloads\n
+11 - Define nome + formato CSV\n
+12 - Salva o download na pasta /downloads/dados/\n
 
 B) Execução Sem Login
 
